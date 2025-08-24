@@ -1,10 +1,12 @@
 # On every push this script is executed
 on: push
 name: Build and deploy GH Pages
+
+permissions:
+  actions: write
+  pages: write
+
 jobs:
-  permissions:
-    actions: write
-    pages: write
   build:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
